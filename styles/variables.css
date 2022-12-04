@@ -1,0 +1,9 @@
+:root {
+  --color-primary: blue;
+  --color-secondary: yellow;
+  --color-white: white;
+
+  --font-primary: 'Roboto Slab', serif;;
+  --font-secondary: 'Poppins', sans-serif;
+  --font-tertiary: 'Roboto', sans-serif;
+}
