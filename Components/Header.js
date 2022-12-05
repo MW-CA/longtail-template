@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BsSnow2 } from 'react-icons/bs'
 import Lang, { useLanguage, LanguageProvider } from '../Components/useLanguage'
 import { useState } from 'react'
 function Header() {
+  const [loaded, setLoaded] = useState(false)
+  useEffect(() => {
+    setLoaded(true)
+  }, [])
   return (
     <header
       style={{
@@ -23,21 +27,42 @@ function Header() {
             width: '75px',
             borderRadius: '75px',
             marginRight: '20px',
+            transform: `rotate(${loaded ? 90 : 0}deg)`,
+            opacity: loaded ? 1 : 0,
+            transition: 'all 1s ease',
           }}
         >
           <BsSnow2 style={{ fontSize: '50px', color: 'var(--color-white)' }} />
         </div>
-        <div>
+        <div
+          style={{
+            overflow: 'hidden',
+            opacity: loaded ? 1 : 0,
+            transition: 'all 1s ease',
+          }}
+        >
           <div
             style={{
               fontWeight: '700',
               fontSize: '3em',
               fontFamily: 'var(--font-roboto-slab)',
+              position: 'relative',
+              left: loaded ? 0 : -500,
+              transition: 'all 1s ease',
             }}
           >
             frostdates
           </div>
-          <div style={{ fontSize: '1.6em', fontStyle: 'italic' }}>
+          <div
+            style={{
+              fontSize: '1.6em',
+              fontStyle: 'italic',
+              display: 'hidden',
+              position: 'relative',
+              top: loaded ? 0 : 500,
+              transition: 'all 1s ease',
+            }}
+          >
             <Lang en='plant with confidence' es='siembra confiable' />
             {/* {lang({ en: 'plant with confidence', es: 'siembra confiable' })} */}
           </div>
@@ -67,6 +92,7 @@ function LanguageSelector() {
         alignItems: 'center',
         fontSize: '1.25em',
         cursor: isActive ? 'pointer' : 'default',
+        fontFamily: 'var(--font-roboto)',
       }}
       onMouseDown={switchLanguage}
       onMouseEnter={() => setIsActive(true)}
