@@ -7,7 +7,7 @@ export default function Home() {
     <div
       style={{
         position: 'relative',
-        height: '80vh',
+        height: '90vh',
       }}
     >
       <div
