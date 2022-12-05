@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Lang from '../Components/useLanguage'
-
+import { GrFormSearch } from 'react-icons/gr'
 export default function Home() {
   return (
     <div
@@ -85,8 +85,12 @@ function Input() {
             height: '100%',
             width: 50,
             margin: 'none',
+            display: 'grid',
+            placeItems: 'center',
           }}
-        />
+        >
+          <GrFormSearch style={{ fontSize: '2em' }} />
+        </button>
       </div>
     </div>
   )
