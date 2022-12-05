@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import useLanguage from '../Components/useLanguage'
+import Lang from '../Components/useLanguage'
 
 export default function Home() {
   return (
@@ -41,7 +41,6 @@ export default function Home() {
 }
 
 function Input() {
-  const { lang } = useLanguage()
   return (
     <div
       style={{
@@ -57,7 +56,10 @@ function Input() {
           fontWeight: 500,
         }}
       >
-        {lang({ en: 'FIND YOUR FROST DATES BY ZIPCODE', es: 'EN ESPAÑOL' })}
+        <Lang
+          en='FIND YOUR FROST DATES BY ZIPCODE'
+          es='ENCUENTRA LA FECHA DE LAS PRÓXIMASHELADAS POR CÓDIGO POSTAL'
+        />
       </div>
       <div
         style={{

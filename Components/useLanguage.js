@@ -11,7 +11,7 @@ export const LanguageProvider = ({ children }) => {
   )
 }
 
-const useLanguage = () => {
+export const useLanguage = () => {
   const { language, setLanguage } = useContext(Context)
   const lang = (obj = {}) => {
     if (!Object.keys(obj).includes(language)) {
@@ -20,6 +20,10 @@ const useLanguage = () => {
       return obj[language]
     }
   }
-  return { lang, setLang: setLanguage }
+  return { lang, setLang: setLanguage, currentLanguage: language }
 }
-export default useLanguage
+const Lang = (props) => {
+  const { lang } = useLanguage()
+  return lang(props)
+}
+export default Lang
