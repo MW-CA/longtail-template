@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import useLanguage from '../Components/useLanguage'
 
 export default function Home() {
   return (
@@ -33,50 +34,57 @@ export default function Home() {
           placeItems: 'center',
         }}
       >
-        <div
+        <Input />
+      </div>
+    </div>
+  )
+}
+
+function Input() {
+  const { lang } = useLanguage()
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      <div
+        style={{
+          fontSize: '2em',
+          fontFamily: 'var(--font-poppins)',
+          fontWeight: 500,
+        }}
+      >
+        {lang({ en: 'FIND YOUR FROST DATES BY ZIPCODE', es: 'EN ESPAÑOL' })}
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          marginTop: 20,
+          height: 50,
+          width: 500,
+        }}
+      >
+        <input
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            height: '100%',
+            flex: 1,
+            borderRadius: '20px 0px 0px 20px',
+            paddingLeft: '20px',
           }}
-        >
-          <div
-            style={{
-              fontSize: '2em',
-              fontFamily: 'var(--font-poppins)',
-              fontWeight: 500,
-            }}
-          >
-            FIND YOUR FROST DATES BY ZIPCODE
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              marginTop: 20,
-              height: 50,
-              width: 500,
-            }}
-          >
-            <input
-              style={{
-                height: '100%',
-                flex: 1,
-                borderRadius: '20px 0px 0px 20px',
-                paddingLeft: '20px',
-              }}
-            ></input>
-            <button
-              style={{
-                backgroundColor: 'var(--color-secondary)',
-                borderRadius: '0px 20px 20px 0px',
-                height: '100%',
-                width: 50,
-                margin: 'none',
-              }}
-            />
-          </div>
-        </div>
+        ></input>
+        <button
+          style={{
+            backgroundColor: 'var(--color-secondary)',
+            borderRadius: '0px 20px 20px 0px',
+            height: '100%',
+            width: 50,
+            margin: 'none',
+          }}
+        />
       </div>
     </div>
   )
