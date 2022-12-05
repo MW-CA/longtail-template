@@ -1,3 +1,17 @@
+#OPINIONS:
+-Reset, static global styles, and css variables ("custom properties) in .css & all other styles CSS in JS (aka inline styles) because inline styles are much easier to make dynamic and Roo hates switching between js and css files.
+--TODO: migrate layout.scss styles to _app.js & remove sass from project
+
+
+
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

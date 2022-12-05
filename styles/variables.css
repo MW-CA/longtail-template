@@ -1,9 +1,13 @@
+/*
+https://coolors.co/268bcf-161314-adf5ff-ffd166-157145
+*/
 :root {
-  --color-primary: blue;
-  --color-secondary: yellow;
+  --color-primary: #ADF5FF;
+  --color-secondary: #FFD166;
   --color-white: white;
+  --color-black: #161314;
 
-  --font-primary: 'Roboto Slab', serif;;
-  --font-secondary: 'Poppins', sans-serif;
-  --font-tertiary: 'Roboto', sans-serif;
+  --font-roboto-slab: 'Roboto Slab', serif;;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
 }

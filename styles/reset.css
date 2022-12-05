@@ -47,3 +47,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* CUSTOM GLOBAL RESETS */
+input, button {
+	border: none;
+	font-size: 100%;
+}
+input:focus {
+	outline: none;
+}

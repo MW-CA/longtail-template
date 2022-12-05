@@ -1,0 +1,52 @@
+
+#body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+header {
+  min-height: 75px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  .icon-container {
+    display: grid;
+    place-items: center;
+    background-color: var(--color-primary);
+    height: 75px;
+    width: 75px;
+    border-radius: 75px;
+    margin-right: 20px;
+    .icon {
+      font-size: 50px;
+      color: var(--color-white);
+    }
+  }
+  .title {
+    font-weight: 700;
+    font-size: 3em;
+    font-family: var(--font-roboto-slab);
+  }
+  .subtitle {
+    font-size: 1.6em;
+    font-style: italic;
+
+  }
+}
+
+
+
+
+
+main {
+  flex: 1;
+
+}
+
+footer {
+  height: 75px;
+
+
+}
