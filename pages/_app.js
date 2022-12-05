@@ -1,17 +1,19 @@
 import '../styles/reset.css'
 import '../styles/variables.css'
-import '../styles/layout.scss'
+
 import { BsSnow2 } from 'react-icons/bs'
 import { LanguageProvider } from '../Components/useLanguage'
 function MyApp({ Component, pageProps }) {
   return (
     <LanguageProvider>
-      <div id='body'>
+      <div
+        style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
+      >
         <Header />
-        <main>
+        <main style={{ flex: 1 }}>
           <Component {...pageProps} />
         </main>
-        <footer>
+        <footer style={{ height: '75px' }}>
           Developed and maintained by a nepotistic, capitalist cabal.
         </footer>
       </div>
@@ -20,13 +22,40 @@ function MyApp({ Component, pageProps }) {
 }
 function Header() {
   return (
-    <header>
-      <div className='icon-container'>
-        <BsSnow2 className='icon' />
+    <header
+      style={{
+        minHeight: '75px',
+        padding: '10px',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <div
+        style={{
+          display: 'grid',
+          placeItems: 'center',
+          backgroundColor: 'var(--color-primary)',
+          height: '75px',
+          width: '75px',
+          borderRadius: '75px',
+          marginRight: '20px',
+        }}
+      >
+        <BsSnow2 style={{ fontSize: '50px', color: 'var(--color-white)' }} />
       </div>
-      <div className='header-text'>
-        <div className='title'>frostdates</div>
-        <div className='subtitle'>plant with confidence</div>
+      <div>
+        <div
+          style={{
+            fontWeight: '700',
+            fontSize: '3em',
+            fontFamily: 'var(--font-roboto-slab)',
+          }}
+        >
+          frostdates
+        </div>
+        <div style={{ fontSize: '1.6em', fontStyle: 'italic' }}>
+          plant with confidence
+        </div>
       </div>
     </header>
   )
