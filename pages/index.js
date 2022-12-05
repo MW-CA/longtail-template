@@ -58,7 +58,7 @@ function Input() {
       >
         <Lang
           en='FIND YOUR FROST DATES BY ZIPCODE'
-          es='ENCUENTRA LA FECHA DE LAS PRÓXIMASHELADAS POR CÓDIGO POSTAL'
+          es='ENCUENTRA LA FECHA DE LAS PRÓXIMAS HELADAS POR CÓDIGO POSTAL'
         />
       </div>
       <div

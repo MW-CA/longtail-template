@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react'
+import { useState, createContext, useContext, useEffect } from 'react'
 
 const Context = createContext('en')
 
@@ -23,7 +23,20 @@ export const useLanguage = () => {
   return { lang, setLang: setLanguage, currentLanguage: language }
 }
 const Lang = (props) => {
-  const { lang } = useLanguage()
-  return lang(props)
+  const { lang, currentLanguage } = useLanguage()
+  const [show, setShow] = useState(true)
+  const [text, setText] = useState(lang(props))
+  useEffect(() => {
+    setShow(false)
+    setTimeout(() => {
+      setText(lang(props))
+      setShow(true)
+    }, 210)
+  }, [currentLanguage])
+  return (
+    <span style={{ opacity: show ? 1 : 0, transition: 'all 0.2s ease' }}>
+      {text}
+    </span>
+  )
 }
 export default Lang
